@@ -1,0 +1,123 @@
+@import "base";
+
+//content right style
+svg{
+    display: block;
+    width: 26px;
+    height: 30px;
+    fill: #999;
+    vertical-align: middle;
+}
+.content{
+    padding:{
+        bottom: 50px;
+    }
+    .swiper-wrapper{
+        text-align: center;
+    }
+   .shop{
+       display: flex;
+       height: 60px;
+       background-color: #fff;
+       .store{
+           flex: 1;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           span{
+               font-size: 18px;
+               padding-left: 10px;
+               color: #333;
+           }
+           &:first-child{
+               border-right: 1px solid #ddd;
+           }
+       }
+   }
+   .whitebg{
+       background-color: #fff;
+   }
+   .weui-flex{
+       display: flex;
+       background-color: #fff;
+       height: 200px;
+       margin-top: 20px;
+       li{
+           height: 100%;
+          &.weui-flex__one{
+           flex: 0.5;
+           height: 200px;
+           border:{
+               right: 1px;
+               bottom: 1px;
+               style:solid;
+               color: #ddd;
+           }
+           .flex-left{
+              height: 100%;
+              display: block;               
+           }
+           
+          }
+          &.weui-flex__two{
+           flex: 1;
+           display: flex;
+           flex-wrap: wrap;
+           height: 201px;
+           .grid-four{
+               width: 49%;
+               height: 99px;
+//             padding: 20px 10px;
+               border: {
+                   bottom: 1px;
+                   left: 1px;
+                   style:solid;
+                   color: #ddd;
+               }
+               &:nth-of-type(odd){
+                   border-left: 0;
+               }
+           }
+          } 
+        }       
+   }
+   
+   .contact{
+       display: flex;
+       height: 50px;
+       margin-top: 20px;
+       justify-content: center;
+       align-items: center;
+       a{
+           flex: 1;
+           text-align: center;
+           color: #666;
+           font-size: 16px;
+           height: 100%;
+           background-color: #fff;
+           line-height: 50px;
+           &:hover{
+               color: #f40;
+           }
+           &:first-of-type{
+               margin-right: 1%;
+           }
+       }
+   }
+}
+
+.weui-tabbar {
+    position: fixed;
+    z-index: 2;
+    
+    .weui-tabbar__item.weui-bar__item--on {
+        svg{
+            fill: #f40;
+        }
+    }
+    .weui-tabbar__item.weui-bar__item--on {
+        .weui-tabbar__label{
+            color: #f40;
+        }
+    }
+}
