@@ -1,29 +1,34 @@
 @import "base";
 
 //content right style
-svg{
-    display: block;
-    width: 26px;
-    height: 30px;
-    fill: #999;
-    vertical-align: middle;
-}
+
 .content{
     padding:{
         bottom: 50px;
     }
     .swiper-wrapper{
         text-align: center;
+        .swiper-slide{
+            
+            img{
+                display: block;
+                overflow: hidden;
+                width: 100%;
+            }
+        }
     }
    .shop{
        display: flex;
-       height: 60px;
+       height: 65px;
        background-color: #fff;
        .store{
            flex: 1;
            display: flex;
            justify-content: center;
            align-items: center;
+           img{
+               height: 50px;
+           }
            span{
                font-size: 18px;
                padding-left: 10px;
@@ -40,13 +45,13 @@ svg{
    .weui-flex{
        display: flex;
        background-color: #fff;
-       height: 200px;
-       margin-top: 20px;
+       height: 220px;
+       margin-top: 5%;
        li{
            height: 100%;
           &.weui-flex__one{
            flex: 0.5;
-           height: 200px;
+           height: 220px;
            border:{
                right: 1px;
                bottom: 1px;
@@ -63,11 +68,10 @@ svg{
            flex: 1;
            display: flex;
            flex-wrap: wrap;
-           height: 201px;
+           height: 222px;
            .grid-four{
-               width: 49%;
-               height: 99px;
-//             padding: 20px 10px;
+               width: 49.5%;
+               height: 109px;
                border: {
                    bottom: 1px;
                    left: 1px;
@@ -75,6 +79,7 @@ svg{
                    color: #ddd;
                }
                &:nth-of-type(odd){
+                   width: 50%;
                    border-left: 0;
                }
            }
@@ -85,7 +90,7 @@ svg{
    .contact{
        display: flex;
        height: 50px;
-       margin-top: 20px;
+       margin-top: 5%;
        justify-content: center;
        align-items: center;
        a{
@@ -96,28 +101,31 @@ svg{
            height: 100%;
            background-color: #fff;
            line-height: 50px;
+           margin: 0 3%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
            &:hover{
                color: #f40;
            }
            &:first-of-type{
-               margin-right: 1%;
+               margin-right: 0;
            }
+           i{
+               display: block;
+               margin-right: 8%;
+               &.money-icon{               
+                   width: 33px;
+                   height: 34px;
+                   background: url("../images/money_07.png") no-repeat center;                   
+               }
+               &.phone-icon{               
+                   width: 31px;
+                   height: 33px;
+                   background: url("../images/tel_07.png") no-repeat center;                   
+               }
+           }
+           
        }
    }
-}
-
-.weui-tabbar {
-    position: fixed;
-    z-index: 2;
-    
-    .weui-tabbar__item.weui-bar__item--on {
-        svg{
-            fill: #f40;
-        }
-    }
-    .weui-tabbar__item.weui-bar__item--on {
-        .weui-tabbar__label{
-            color: #f40;
-        }
-    }
 }
