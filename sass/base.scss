@@ -1,81 +1,169 @@
 //浏览器初始化样式
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, span, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, input,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+span,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+input,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
+
+* {
+    box-sizing: border-box;
+}
+
 $font:"Microsoft YaHei";
 $color:#ff6c00;
-html, body {
-  font-size: 16px;
-  font-family:$font;
-  height: 100%;
-  -webkit-tap-highlight-color: transparent;
+html,
+body {
+    font-size: 16px;
+    font-family: $font;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
-body{
-  background-color: #f1f4f9;
+
+body {
+    background-color: #f1f4f9;
 }
-ol, ul {
-  list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
 }
 
-q, blockquote {
-  quotes: none;
+q,
+blockquote {
+    quotes: none;
 }
 
 img {
-  border: none;
-  max-width: 100%;
+    border: none;
+    max-width: 100%;
 }
 
-input,textarea,button{
-  outline: none;
+input,
+textarea,
+button {
+    outline: none;
 }
-button{
-  border: 0 none;
+
+button {
+    border: 0 none;
 }
-i{
-  font-style: normal;
+
+i {
+    font-style: normal;
 }
-select{
-  appearance: none;
-  border:0 none;
+
+select {
+    appearance: none;
+    border: 0 none;
 }
+
 a {
-  color: #666;
-  text-decoration: none;
-  font-family: $font;
+    color: #666;
+    text-decoration: none;
+    font-family: $font;
 }
 
 a:hover {
-  text-decoration: none;
-  color: $color;
+    text-decoration: none;
+    color: $color;
 }
-svg{
+
+svg {
     display: block;
     width: 26px;
     height: 30px;
@@ -84,49 +172,50 @@ svg{
 }
 
 footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
 }
 
 footer a {
-  color: #999;
-  text-decoration: none;
+    color: #999;
+    text-decoration: none;
 }
 
 .weui-tabbar {
     position: fixed;
     z-index: 2;
-    
     .weui-tabbar__item.weui-bar__item--on {
-        svg{
+        svg {
             fill: $color;
         }
     }
     .weui-tabbar__item.weui-bar__item--on {
-        .weui-tabbar__label{
+        .weui-tabbar__label {
             color: $color;
         }
     }
 }
 
+.panel-media-tit {
+    color: #404040;
+}
 
+.panel-media-subtit {
+    font-size: 10px;
+    color: #ccc;
+}
 
+.panel-media-price {
+    color: $color;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.panel-tip {
+    display: table;
+    font-size: 10px;
+    border-radius: 2px;
+    border: 1px solid $color;
+    color: $color;
+    text-align: center;
+    padding: 0 5px;
+}

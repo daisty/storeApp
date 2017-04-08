@@ -1,0 +1,224 @@
+@mixin caret($position,$caret-width,$border-width,$direction,$border-color,$background-color){
+    position: $position;
+    display: inline-block;
+    width: $border-width * 2;
+    height: $caret-width * 2;
+
+    &:before,
+    &:after {
+        content:"";
+        position: absolute;
+    }
+    @if $direction == top {
+    &:before {
+        top:0;
+        left: 0;
+        border-bottom: $caret-width solid $border-color;
+        border-left: $caret-width solid transparent;
+        border-right: $caret-width solid transparent;
+    }
+    &:after {
+        left: $border-width;
+        top: $border-width;
+        border-bottom: ($caret-width - $border-width) solid $background-color;
+        border-left: ($caret-width - $border-width) solid transparent;
+        border-right: ($caret-width - $border-width) solid transparent;
+    }
+    }
+    @else if $direction == right {
+    &:before {
+        top:0;
+        left: 0;
+        border-left: $caret-width solid $border-color;
+        border-top: $caret-width solid transparent;
+        border-bottom: $caret-width solid transparent;
+    }
+    &:after {
+        left: -1px;
+        top: $border-width;
+        border-left: ($caret-width - $border-width) solid $background-color;
+        border-top: ($caret-width - $border-width) solid transparent;
+        border-bottom: ($caret-width - $border-width) solid transparent;
+      }
+  }
+  @else if $direction == bottom {
+    top: $caret-width;
+    &:before {
+        top:0;
+        left: 0;
+        border-top: $caret-width solid $border-color;
+        border-left: $caret-width solid transparent;
+        border-right: $caret-width solid transparent;
+    }
+    &:after {
+        left: $border-width;
+        top: 0;
+        border-top: ($caret-width - $border-width) solid $background-color;
+        border-left: ($caret-width - $border-width) solid transparent;
+        border-right: ($caret-width - $border-width) solid transparent;
+  }
+  }
+  @else if $direction == left {
+    &:before {
+        top:0;
+        left: 0;
+        border-right: $caret-width solid $border-color;
+        border-top: $caret-width solid transparent;
+        border-bottom: $caret-width solid transparent;
+    }
+    &:after {
+        left: $border-width + 1;
+        top: $border-width;
+        border-right: ($caret-width - $border-width) solid $background-color;
+        border-top: ($caret-width - $border-width) solid transparent;
+        border-bottom: ($caret-width - $border-width) solid transparent;
+    }
+  }
+}
+
+
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 1px solid orange;
+  display: inline-block;
+  background: orange;
+  position: relative;
+  vertical-align: middle;
+
+  &.box2 {
+    background-color: transparent;
+    border: 1px solid orange;
+  }
+
+  .caret-top {
+    bottom: 9px;
+    left: 20px;
+    @include caret(absolute,10px,1px,top,orange,#fff);
+  }
+  .caret-right {
+    left: -1px;
+    top: 20px;
+    @include caret(absolute,10px,1px,right,orange,#fff);
+  }
+  .caret-bottom {
+    top: -1px;
+    left: 20px;
+    @include caret(absolute,10px,1px,bottom,orange,#fff);
+  }
+  .caret-left {
+    right: 9px;
+    top: 20px;
+    @include caret(absolute,10px,1px,left,orange,#fff);
+  }
+}
+
+.tip{
+  width: 150px;
+  height: 50px;
+  background: #000;
+  border-radius:3px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 20px;
+
+  .caret-top{
+    top: -10px;
+    left: 10px;
+    @include caret(absolute,10px,1px,top,#000,#000);
+  }
+  .caret-right{
+    top: 10px;
+    right: 0px;
+    @include caret(absolute,10px,1px,right,#000,#000);
+  }
+  .caret-bottom{
+    bottom: 0px;
+    left: 10px;
+    @include caret(absolute,10px,1px,bottom,#000,#000);
+  }
+  .caret-left{
+    left: -10px;
+    top: 10px;
+    @include caret(absolute,10px,1px,left,#000,#000);
+  }
+}
+.tip2 {
+  background-color: transparent;
+  border: 1px solid #000;
+
+  .caret-top {
+    @include caret(absolute,10px,1px,top,#000,#fff);
+  }
+  .caret-right {
+    @include caret(absolute,10px,1px,right,#000,#fff);
+  }
+  .caret-bottom {
+    @include caret(absolute,10px,1px,bottom,#000,#fff);
+  }
+  .caret-left {
+    @include caret(absolute,10px,1px,left,#000,#fff);
+  }
+}
+// .htmldiv {
+//     width: 1rem;
+//     height: 0.4rem;
+//     font-size: 12px; // 默认写上dpr为1的fontSize
+// }
+// [data-dpr="2"] div {
+//     font-size: 24px;
+// }
+// [data-dpr="3"] div {
+//     font-size: 36px;
+// }
+
+// @mixin font-dpr($font-size){
+//     font-size: $font-size;
+
+//     [data-dpr="2"] & {
+//         font-size: $font-size * 2;
+//     }
+
+//     [data-dpr="3"] & {
+//         font-size: $font-size * 3;
+//     }
+// }
+// .test {
+//     @include font-dpr(16px);
+// }
+// $baseFontSize: 75;
+// @function px2rem($px){
+//     @return $px/$baseFontSize * 1rem;
+// }
+// @function px2rem2($px){
+//     @return px2rem($px*2);
+// }
+
+// @mixin font-dpr($font-size){
+//     font-size: $font-size;
+
+//     [data-dpr="2"] & {
+//         font-size: $font-size * 2;
+//     }
+
+//     [data-dpr="3"] & {
+//         font-size: $font-size * 3;
+//     }
+// }
+
+// .test {
+//           @include font-dpr(16px);
+//           width: px2rem2(300);
+//           margin: 0 auto;
+//           border:1px #dcdcdc solid;
+//       }
+//       img {
+//           display: block;
+//           width: px2rem2(355);
+//           margin: 0 auto;
+//       }
+
