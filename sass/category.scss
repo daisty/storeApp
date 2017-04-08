@@ -1,0 +1,366 @@
+$color: #ff6c00;
+$borderColor: #efefef;
+// 头尾公共样式
+.filter-header,
+.filter-footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+}
+
+// 头部
+.filter-header {
+    top: 0;
+    background-color: #d5d5d5;
+    .home-svg {
+        width: 24%;
+        img {
+            width: 28px;
+            height: 50px;
+            margin: auto 10px;
+        }
+    }
+    span {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+// 右边 固定(推荐/分类标签)
+.filter-item,
+.filter-tip {
+    width: 76%;
+    border-bottom: 1px solid $borderColor;
+    background-color: #FFF;
+    position: fixed;
+    right: 0;
+}
+
+// 右边tab切换
+.filter-item {
+    top: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > li {
+        width: 50%;
+        text-align: center;
+        height: 100%;
+        flex: 1;
+        &.on {
+            color: $color;
+        }
+    }
+    .filter-price {
+        img {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+// 右边标签
+.filter-tip {
+    text-align: center;
+    top: 100px;
+    ul {
+        padding: 8px 5px 0;
+        li {
+            display: inline-block;
+            border: 1px solid $borderColor;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 30%;
+            text-align: center;
+            padding: 3px;
+            margin-bottom: 5px;
+            &.on {
+                border-color: $color;
+                color: $color;
+            }
+        }
+    }
+}
+
+// 除了头部其他整个大盒子
+.filter-index {
+    width: 100%;
+    height: calc ( 100% -50px);
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+}
+
+// 滚动用到
+.scroller {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+// 左边导航
+.filter-left {
+    width: 24%;
+    height: 100%;
+    border-right: 1px solid $borderColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 50px;
+    overflow: hidden;
+    .filter-menus {
+        position: absolute;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    li {
+        background-color: $borderColor;
+        font-size: 14px;
+        // width: 90px;
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        margin-bottom: 2px;
+        &.on {
+            background-color: #FFF;
+            border-left: 4px solid $color;
+            a {
+                color: $color;
+            }
+        }
+    }
+}
+
+.filter-right {
+    font-size: 14px;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 76%;
+    bottom: 50px;
+    overflow: hidden;
+    .filter-content {
+        // padding: 10px 0;
+    }
+}
+
+.panel-media {
+    font-size: 14px;
+    padding: 9px;
+    position: relative;
+    display: flex;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid $borderColor;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .panel-media-hd {
+        height: 80px;
+        width: 80px;
+        text-align: center;
+        margin-right: 11px;
+        background-color: rgba($borderColor, .5);
+        position: relative;
+        .panel-media-pic {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .panel-media-bd {
+        width: calc(100% - 80px);
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        flex-direction: column;
+        & > div {
+            flex: 1;
+        }
+    }
+    .panel-media-tit {
+        color: #404040;
+    }
+    .panel-media-subtit {
+        font-size: 10px;
+        color: #ccc;
+    }
+    .panel-tip {
+        display: table;
+        font-size: 10px;
+        border-radius: 2px;
+        border: 1px solid $color;
+        color: $color;
+        text-align: center;
+        padding: 0 5px;
+    }
+    .panel-media-price {
+        color: $color;
+    }
+}
+
+// 加减
+.number {
+    display: flex;
+    width: 22px;
+    height: 30%;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    transition: all .2s;
+    input {
+        flex: 1;
+        width: 30%;
+        text-align: center;
+        height: 100%;
+        margin-left: 28px;
+        margin-right: 28px;
+        opacity: 0;
+        transition: all .3s;
+    }
+    &.enter {
+        width: 28%;
+        height: 22px;
+        input {
+            opacity: 1;
+        }
+    }
+}
+
+.reduce,
+.add {
+    display: block;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    bottom: 0;
+    &:before {
+        content: '';
+        border-top: 2px solid #fff;
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -1px;
+    }
+}
+
+.reduce {
+    border: 1px solid $color;
+    z-index: 1;
+    &:before {
+        border-color: $color;
+    }
+}
+
+.add {
+    background-color: $color;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    &:after {
+        content: '';
+        border-top: 2px solid #fff;
+        width: 11px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -6px;
+        margin-top: -1px;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+// 抛出去的小球
+.ball-contain {
+    .ball {
+        position: fixed;
+        left: 32px;
+        bottom: 22px;
+        z-index: 10;
+        &.drop-transition {
+            transition: all .4s cubic-bezier(.49, -.29, .75, .41);
+            .inner {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: $color;
+                transition: all .4s linear;
+            }
+        }
+    }
+}
+
+.select {
+    color: #fff;
+    background-color: #0063d8;
+    font-size: 14px;
+}
+
+.tol-price {
+    font-size: 18px;
+    color: #09b5a5;
+    margin-right: 5px;
+}
+
+.ffoot-hd {
+    width: 18%;
+    height: 100%;
+    position: relative;
+    .cart-img {
+        position: absolute;
+        left: 16%;
+        top: -30px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .weui-badge {
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+    }
+}
+
+.ffoot-bd {
+    flex: 2;
+    box-flex: 2;
+    .weui-tabbar__label {
+        text-align: left;
+    }
+}
+
+.filter-footer {
+    // background-color: $borderColor;
+    // bottom: 0;
+    .weui-tabbar {
+        align-items: center;
+    }
+    .weui-tabbar__item {
+        padding: 0;
+    }
+    .weui-tabbar__label {
+        line-height: 1;
+    }
+}
+.hide {
+    display: none;
+}
