@@ -18,31 +18,21 @@
     <div class="content">
     	<div class="hd">
     		<div class="hd-back"><a href="go.back(-1)"></a></div>
-    		<div class="hd-title">提现记录</div>
+    		<div class="hd-title">加入我们</div>
     	</div>
-    	<div class="app-list">
-    		<div class="app-list-con">
-				<div class="weui-cells">
-					<div class="weui-cell">
-					    <p>提现编号：DOGPOASKERGPOKE</p>
-					</div>
-					<div class="weui-cell">
-					    <p>申请时间：2017-04-08 10:00</p>
-					</div>
-					<div class="weui-cell">
-						<div class="weui-cell__bd">
-					      <p>提现金额：¥100</p>
-					    </div>
-					    <div class="weui-cell__ft red">
-					    	提现冻结中
-					    </div>
-					</div>
-				</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+			    <div class="weui-cell__bd">
+			       <input class="weui-input" type="text" placeholder="请输入邀请码">
+			    </div>
+			    <div class="weui-cell__ft ml10"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" id="confirmBtn">确认</a></div>
 			</div>
-    	</div>
-    </div>
-    <div class="weui-footer_fixed-bottom weui-footer weui-tabbar ft-btn-con">
-    	<a class="confirm-withdraw" href="add_withdraw.html"><b class="add"></b><span>我要提现</span></a>
+		</div>
+		<div class="invitation">
+			<p>相关事宜请联系客服 <a class="red" href="tel:10086">10086</a></p>
+			<img src="../font_icon/service.svg" alt="" />
+			<p class="red">恭喜你成为代理</p>
+		</div>
     </div>
 
     <script src="../dist/lib/jquery-2.1.4.js"></script>
@@ -55,6 +45,19 @@
 
     <script src="../dist/js/jquery-weui.js"></script>
     <script src="/js/common.js"></script>
+    <script>
+    	succeed();
+    	function succeed(){
+    		$('#confirmBtn').on('click',function(){
+    			$.toast("恭喜你成为代理", "text");
+				$(this).parents('.weui-cells').hide(100,function(){
+					$('.invitation').show();
+				});
+    			
+    			
+    		})
+    	}
+    </script>
 </body>
 
 </html>

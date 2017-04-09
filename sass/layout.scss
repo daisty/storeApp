@@ -2,7 +2,8 @@
 $hd:#ff6c00;
 $line-color:#ececec;
 $color:#ff6c00;
-
+$blue:#66b2fe;
+$yellow:#ffbe00;
 //单行文字省略
 @mixin txt() {
     overflow: hidden;
@@ -27,7 +28,19 @@ em{
     font-style: normal;
 }
 .red{
-    color:$color;
+    color:$color!important;
+}
+.yellow{
+    color:$yellow!important;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.blue{
+    color:$blue;
 }
 .gray{
     color:#999;
@@ -38,9 +51,35 @@ em{
 .layout-pd{
     padding: 10px 15px;
 }
+.ml10{
+    margin-left: 10px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.bb-line{
+    position: relative;
+    &:after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        border-top: 1px solid #d9d9d9;
+        color: #d9d9d9;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+    }
+}
 .close-icon{
     background: url(../font_icon/close.svg) no-repeat center center;
-}  
+} 
+.ft-height{
+    height:45px ;
+} 
 /* weui初始化 */
 .weui-cell:before{
     left:0;
@@ -52,9 +91,13 @@ em{
     bottom: 0;
 }
 .weui-cells{
+    font-size: 16px;
     margin-top: 0;
 }
-.weui-cells{
+.weui-cell{
+
+}
+.weui-cell__ft{
     color:#666;
 }
 .weui-cells_checkbox .weui-cell__hd {
@@ -120,9 +163,10 @@ em{
 }
 .app-list-con{
     background: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     
     .can{
+        font-size: 14px;
         margin-top: 30px;
         padding: 0 15px;
         line-height: 40px;
@@ -187,26 +231,37 @@ em{
     }
 }
 .ft-btn-con{
-    height: 45px;
-    a{
-        width: 100%;
-        height: 100%;
+  
+    padding: 8px 15px;
+    background: #fff;
+    .confirm-withdraw{
+
+        height: 30px;
         display: block;
         font-size: 16px;
-        line-height: 42px;
-        background: #fff;
+        line-height: 30px;
+        margin: 0 auto;
         color:$color;
         span{
             display: inline-block;
             vertical-align: middle;
         }
     }
-    
+    .weui-btn{
+        height: 30px;
+        color:#fff;
+        line-height: 30px;
+    }
+    .refund-btn{
+        margin-right:0;
+    }
+
 }
 
 
-/* 地址管理列表 start */
+/* address_list start */
 .address-list{
+    padding: 5px 15px 10px;
     position: relative;
     &:after{
         content: " ";
@@ -224,7 +279,7 @@ em{
     }
 }
 .address-msg{
-    margin-bottom: 8px;
+    padding: 5px 0;
     strong,span{
         margin-right: 8px;
     }
@@ -244,41 +299,159 @@ em{
     background: url(../font_icon/edit.svg) no-repeat center center;
     display: block;
 }
-/* 地址管理列表 end */
+/* address_list end */
 
 
+/* order_detail start */
+.status-bar{
+    background: #fff;
+    .receiving{
+        padding: 10px 15px;
+    }
+}
+.status-det{
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    p{
+        padding: 5px 0;
+        color:#333;
+        label{
+           color:#666;
+        }
+    }
+}
+.order-detail{
+    margin-bottom: 10px;
+    >div{
+        background: #fff;
+    }
+}
+.list-tit{
+    font-weight: bold;
+    .weui-cell__ft{
+        color:#666;
+    }
+}
+.detail-price{
+    padding:0 0 5px;
+     background: #fff;
+}
+.price{
+        padding: 5px 15px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    span{
+        font-size: 14px;
+        min-width: 60px;
+        text-align: right;
+        
+    }
+    .price-delete{
+        text-decoration:line-through;
+        
+    }
+}
+.order-particulars{
+    padding: 5px 0;
+    .weui-cell{
+        padding-top:5px ;
+        padding-bottom: 5px;
+    }
+    .weui-cell:before{
+        display: none;
+    }
+    
+}
+.result-price{
+    color:#333;
+}
+/* order_detail end */
 
 
+/* selective_payment start */
+.pay{
+    margin-bottom: 10px;
+    background: #fff;
+}
+.question{
+    margin-top: 6px;
+    font-size: 12px;
+    text-align: center;
+}
+/* selective_payment end */
 
+/* invitation-system start */
+.invitation{
+    display: none;
+    padding: 20px 15px;
+    background: #fff;
+    text-align: center;
+    p{
+        padding: 15px;
+    }
+}
 
+/* invitation-system end */
 
+/* recharge start */
+.recharge{
+    padding: 10px 15px;
+    background: #fff;  
+}
+.recharge-box{
+    position: relative;
+    width: 100%;
+    line-height: 28px;
+    .recharge-btn{
+        a{
+            width: 100%;
+            height: 100%;
+            border: 1px solid $line-color;
+            display: block;
+            font-size: 14px;
+            padding: 0 10px;
+            border-radius: 3px;
+        } 
+        i{
+            position: absolute;
+            right: 8px;
+            top: 4px;
+            height: 24px;
+            display: block;
+        }
+    }
+    
+    .downtoggle{
+        display: none;
+        border: 1px solid $line-color;
+        border-radius: 3px;
+        padding: 5px;  
+        li{
+            padding: 0 10px;
+        }
+    }
+}
 
+/* recharge end */
 
+/* voucher start */
+.voucher-list{
+    .num{
+        color:#333;
+    }
+}
+.pane-form {
+    background-color: #fff;
+    text-align: center;
+    padding:0 0  10px;
+}
+.weui-btn_blue {
+    background-color: #66b2fe;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* voucher end */

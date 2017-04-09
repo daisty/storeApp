@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body ontouchstart>
+    <div class="content">
+    	<div class="hd">
+    		<div class="hd-back"><a href="go.back(-1)"></a></div>
+    		<div class="hd-title">我的代金券</div>
+    	</div>
+		<div class="weui-cells mb10">
+			<div class="weui-cell">
+			    <div class="weui-cell__bd">
+			       <input class="weui-input" type="text" placeholder="请输入代金券号码">
+			    </div>
+			    <div class="weui-cell__ft ml10"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" id="toast-voucher">激活</a></div>
+			</div>
+		</div>
+		<div class="voucher-list">
+			<div class="pane-form bb-line">
+	            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_blue">待完成</a>
+	            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">已完成</a>
+	        </div>
+			<ul class="detail-price">
+	        	<li class="bb-line">
+	        		<div class="price">
+			            <div class="weui-cell__bd ">
+			              <p class="num">卷码：qa1635468461</p>
+			            </div>
+			            <span class="blue">可使用</span>
+		            </div>
+		            <div class="price">
+			            <div class="weui-cell__bd ">
+			              <p class="yellow">5元代金券</p>
+			            </div>
+			            <span>有效日期：2017-04-10</span>
+		            </div>
+	        	</li>
+	        	<li>
+	        		<div class="price">
+			            <div class="weui-cell__bd ">
+			              <p class="num">卷码：qa1635468461</p>
+			            </div>
+			            <span class="red">已作废</span>
+		            </div>
+		            <div class="price">
+			            <div class="weui-cell__bd ">
+			              <p class="yellow">5元代金券</p>
+			            </div>
+			            <span>有效日期：2017-04-10</span>
+		            </div>
+	        	</li>
+	        </ul>
+		</div>
+    </div>
+
+    <script src="../dist/lib/jquery-2.1.4.js"></script>
+    <script src="../dist/lib/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    </script>
+
+    <script src="../dist/js/jquery-weui.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+		$('#toast-voucher').on('click',function(){
+			$.toast("激活成功");
+		})
+    </script>
+</body>
+
+</html>
