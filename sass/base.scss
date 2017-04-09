@@ -285,3 +285,28 @@ footer a {
         margin: 7.5px;
     }
 }
+@import 'caret';
+// 其他页面有返回的公共头部
+.base-header {
+    background-color: #FFF;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    background-color: #f5d6b7;
+    span {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.go-back {
+    margin-left: 15px;
+    top: 15px;
+    @include caret(absolute, 10px, 1px, left, #157efe, #f5d6b7);
+}
