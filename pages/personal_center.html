@@ -16,42 +16,68 @@
 <body ontouchstart>
     <div class="content">
         <div class="bg">
-        	
+        	<div class="head-top">
+        		<a href="javascript:void(0)" class="avatar"><img src="../images/pictou.png" alt="" /></a>
+	        	<p class="people-name">
+	        		<span>小明</span>
+	        		<span>普通用户</span>
+	        	</p>
+        	</div>
+        	<div class="account">
+        		<p class="account-balance">
+        			<span>账户余额</span>
+        			<span>8888元</span>
+        		</p>
+        		<p class="account-balance">
+        			<span>优惠券</span>
+        			<span>8张</span>
+        		</p>
+        	</div>
         </div>
-        <div class="shop">
-            <a href="#" class="store">
-                <img src="/images/cheap_03.png" alt="" />
-                <span>便利店</span>
-            </a>
-            <a href="#" class="store">
-                <img src="../images/clothes_03.png" alt="" />
-                <span>洗衣店</span>
-            </a>
+        <div class="order">
+        	<p class="my-order"><i class="order-icon"></i>我的订单</p>
+           	<a href="javascript:void(0)" class="view-all">查看全部订单<i class="arrow"></i></a>
         </div>
-
-        <ul class="weui-flex">
-            <li class="weui-flex__one">
-                <a href="#" class="flex-left"></a>
-            </li>
-            <li class="weui-flex__two">
-                <a href="#" class="grid-four"></a>
-                <a href="#" class="grid-four"></a>
-                <a href="#" class="grid-four"></a>
-                <a href="#" class="grid-four"></a>
-            </li>
-        </ul>
-        <div class="contact">
-            <a href="#"><i class="money-icon"></i>充值</a>
-            <a href="tel:13552732093"><i class="phone-icon"></i>客服电话</a>
-        </div>
+		
+		<div class="payment">
+			<a href="javascript:void(0)" class="await">
+				<img src="../images/payment.png" alt="" />
+				<span>待付款</span>
+			</a>
+			<a href="javascript:void(0)" class="await">
+				<img src="../images/receive.png" alt="" />
+				<span>待收货</span>
+			</a>
+			<a href="javascript:void(0)" class="await">
+				<img src="../images/refunds.png" alt="" />
+				<span>退款</span>
+			</a>
+		</div>
+       	<div class="other-thing">
+       		<a href="javascript:void(0)" class="every-other">
+       			<i class="address"></i>
+       			<span>我的地址</span>
+       			<i class="arrow-icon"></i>
+       		</a>
+       		<a href="javascript:void(0)" class="every-other">
+       			<i class="vouchers"></i>
+       			<span>我的代金券</span>
+       			<i class="arrow-icon"></i>
+       		</a>
+       		<a href="javascript:void(0)" class="every-other">
+       			<i class="join"></i>
+       			<span>加入我们</span>
+       			<i class="arrow-icon"></i>
+       		</a>
+       	</div>
     </div>
 
     <!--底部导航开始-->
     <div class="weui-tabbar">
-        <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+        <a href="#tab1" class="weui-tabbar__item ">
             <div class="weui-tabbar__icon">
-                <svg role="img" class="shopping">
-                    <use xlink:href="#shopping"></use>
+                <svg role="img" class="home">
+                    <use xlink:href="#home"></use>
                 </svg>
             </div>
             <p class="weui-tabbar__label">首页</p>
@@ -64,10 +90,10 @@
             </div>
             <p class="weui-tabbar__label">购物车</p>
         </a>
-        <a href="#tab3" class="weui-tabbar__item">
+        <a href="#tab3" class="weui-tabbar__item weui-bar__item--on">
             <div class="weui-tabbar__icon">
-                <svg role="img" class="shopping">
-                    <use xlink:href="#shopping"></use>
+                <svg role="img" class="person">
+                    <use xlink:href="#person"></use>
                 </svg>
             </div>
             <p class="weui-tabbar__label">我的</p>

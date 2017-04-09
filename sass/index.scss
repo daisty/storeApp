@@ -10,7 +10,7 @@ svg{
 }
 .content{
     padding:{
-        bottom: 50px;
+        bottom: 30px;
     }
     .swiper-wrapper{
         text-align: center;
@@ -19,6 +19,7 @@ svg{
        display: flex;
        height: 60px;
        background-color: #fff;
+       margin-top: -5px;
        .store{
            flex: 1;
            display: flex;
@@ -40,13 +41,13 @@ svg{
    .weui-flex{
        display: flex;
        background-color: #fff;
-       height: 200px;
+       height: 210px;
        margin-top: 20px;
        li{
            height: 100%;
           &.weui-flex__one{
            flex: 0.5;
-           height: 200px;
+           height: 210px;
            border:{
                right: 1px;
                bottom: 1px;
@@ -63,11 +64,10 @@ svg{
            flex: 1;
            display: flex;
            flex-wrap: wrap;
-           height: 201px;
+           height: 211px;
            .grid-four{
-               width: 49%;
-               height: 99px;
-//             padding: 20px 10px;
+               width: 49.5%;
+               height: 104px;
                border: {
                    bottom: 1px;
                    left: 1px;
@@ -75,6 +75,7 @@ svg{
                    color: #ddd;
                }
                &:nth-of-type(odd){
+                   width: 50%;
                    border-left: 0;
                }
            }
@@ -84,7 +85,7 @@ svg{
    
    .contact{
        display: flex;
-       height: 50px;
+       height: 60px;
        margin-top: 20px;
        justify-content: center;
        align-items: center;
@@ -95,13 +96,37 @@ svg{
            font-size: 16px;
            height: 100%;
            background-color: #fff;
-           line-height: 50px;
+           line-height: 60px;
+          
            &:hover{
                color: #f40;
            }
            &:first-of-type{
-               margin-right: 1%;
+               margin:{
+                   left: 4%;
+                   right: 5%;
+               }
            }
+           &:last-of-type{
+               margin-right: 4%;
+           }
+           i{
+               display: inline-block;
+               vertical-align: middle;
+               margin-right: 6%;
+               &.money{
+                width: 33px;
+                height: 34px;
+                background: url(../images/money_07.png) no-repeat center;               
+               }
+               &.phone{
+                width: 31px;
+                height: 32px;
+                background: url(../images/tel_07.png) no-repeat center;
+                
+               }
+           }
+           
        }
    }
 }
