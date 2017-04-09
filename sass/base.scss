@@ -197,6 +197,7 @@ footer a {
     }
 }
 
+// 标题
 .panel-media-tit {
     color: #404040;
 }
@@ -210,6 +211,7 @@ footer a {
     color: $color;
 }
 
+// 小标签
 .panel-tip {
     display: table;
     font-size: 10px;
@@ -218,4 +220,93 @@ footer a {
     color: $color;
     text-align: center;
     padding: 0 5px;
+}
+
+// 底部
+.bottom-hd {
+    width: 18%;
+    height: 100%;
+    position: relative;
+    .cart-img {
+        position: absolute;
+        left: 16%;
+        top: -30px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .weui-badge {
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+    }
+}
+
+.bottom-bd {
+    flex: 2;
+    box-flex: 2;
+    .weui-tabbar__label {
+        text-align: left;
+    }
+}
+
+.base-footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    .weui-tabbar {
+        align-items: center;
+    }
+    .weui-tabbar__item {
+        padding: 0;
+    }
+    .weui-tabbar__label {
+        line-height: 1;
+    }
+}
+
+// 购物车图标
+.base-cart {
+    border-radius: 50%;
+    background-color: $color;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+        width: 25px;
+        height: 25px;
+        margin: 7.5px;
+    }
+}
+@import 'caret';
+// 其他页面有返回的公共头部
+.base-header {
+    background-color: #FFF;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    background-color: #f5d6b7;
+    span {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+.go-back {
+    margin-left: 15px;
+    top: 15px;
+    @include caret(absolute, 10px, 1px, left, #157efe, #f5d6b7);
 }

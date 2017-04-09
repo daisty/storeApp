@@ -1,0 +1,129 @@
+@import 'caret';
+$color: #ff6c00;
+$borderColor: #efefef;
+// 头尾公共样式
+.order-detail {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    section {
+        background-color: #FFF;
+        margin-top: 10px;
+        .weui-cell__bd {
+            color: #404040;
+        }
+        .weui-media-box {
+            padding: 5px 12px;
+        }
+        .weui-media-box__desc {
+            line-height: 1.8;
+        }
+        .weui-panel:after {
+            left: 15px;
+        }
+        .panel-list {
+            padding: 5px 12px;
+        }
+    }
+    table.panel-hd {
+        min-width: 70%;
+    }
+}
+
+.weui-panel {
+    .weui-btn {
+        margin-left: 5px;
+        margin-right: 0;
+        line-height: 1.8;
+        margin-top: 0;
+        vertical-align: middle;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.weui-btn_blue {
+    background-color: #66b2fe;
+}
+
+.pane-form {
+    background-color: #e5e5e5;
+    text-align: center;
+}
+
+.panel-list {
+    background-color: #FFF;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    overflow: hidden;
+    .panel-hd {
+        flex: 1;
+        max-width: 30%;
+        line-height: 1.8;
+        th {
+            &:first-child {
+                min-width: 60px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .panel-bd {
+        flex: 1;
+    }
+    .panel-ft {
+        padding-right: 20px;
+        .panel-caret {
+            right: 20px;
+            margin-top: -10px;
+            @include caret(absolute, 10px, 1px, right, #157efe, #fff);
+        }
+    }
+}
+
+.panel-input {
+    .panel-caret {
+        right: 30px;
+        margin-top: 10px;
+        @include caret(absolute, 10px, 2px, bottom, #157efe, #fff);
+    }
+}
+
+.base-footer {
+    .weui-panel {
+        padding: 0 12px;
+        text-align: right;
+    }
+}
+
+.weui-btn_cancel {
+    background-color: #ccc;
+    &:after {
+        border-color: #ccc;
+    }
+}
+
+.weui-btn_now {
+    background-color: #fa181a;
+    &:after {
+        border-color: #fa181a;
+    }
+}
+
+.mtop-5 {
+    margin-top: 5px;
+}
+
+.fcolor {
+    color: #fa181a;
+    text-align: center;
+}
+
+.rtxt {
+    text-align: right;
+}
+
+.ctxt {
+    text-align: center;
+}

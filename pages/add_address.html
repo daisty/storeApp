@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body ontouchstart>
+    <div class="content">
+    	<div class="hd">
+    		<div class="hd-back"><a href="address_list.html"></a></div>
+    		<div class="hd-title">我的地址管理</div>
+    		<div class="hd-right"><a class="close-icon show-confirm" href="#"></a></div>
+    	</div>
+    	<div class="weui-cells weui-cells_form">
+    		<div class="weui-cell">
+			    <div class="weui-cell__hd">
+			    	<label class="weui-label">联系人</label>
+			    </div>
+			    <div class="weui-cell__bd">
+			      	<input class="weui-input" type="text" placeholder="姓名">
+			    </div>
+			</div>
+			<div class="weui-cell weui-cells_checkbox">
+			    <div class="weui-cell__hd">
+			    	<label class="weui-label">性别</label>
+			    </div>
+			    <div class="weui-cell__hd">
+			    	<label>
+				      	<input type="radio" name="checkbox1" class="weui-check" checked="checked">
+				      	<i class="weui-icon-checked"></i>
+				      	<span>男</span>
+			      	</label>&nbsp;&nbsp;
+			      	<label>
+				      	<input type="radio" name="checkbox1" class="weui-check">
+				      	<i class="weui-icon-checked"></i>
+				      	<span>女</span>
+			      	</label>
+			    </div>
+			</div>
+			<div class="weui-cell">
+			    <div class="weui-cell__hd">
+			    	<label class="weui-label">联系电话</label>
+			    </div>
+			    <div class="weui-cell__bd">
+			      	<input class="weui-input phone" type="text" placeholder="请输入手机号">
+			    </div>
+			    <div class="weui-cell__ft err">
+			        <i class="weui-icon-warn"></i>
+			    </div>
+			</div>
+			<div class="weui-cell">
+			    <div class="weui-cell__hd">
+			    	<label class="weui-label">所在区域</label>
+			    </div>
+			    <div class="weui-cell__bd">
+			      	<input class="weui-input" type="text" id='city-picker' placeholder="浙江 杭州 拱墅区" />
+			    </div>
+			</div>
+			<div class="weui-cell">
+			    <div class="weui-cell__hd">
+			    	<label class="weui-label">详细地址</label>
+			    </div>
+			    <div class="weui-cell__bd">
+				      <textarea class="weui-textarea bd" rows="2"></textarea>
+			    </div>
+			</div>
+    	</div>
+    	<div class="confirmButton">
+			<a href="javascript:;" class="weui-btn weui-btn_primary">确 定</a>
+		</div>
+    </div>
+
+    <script src="../dist/lib/jquery-2.1.4.js"></script>
+    <script src="../dist/lib/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    </script>
+
+    <script src="../dist/js/jquery-weui.js"></script>
+    <script src="../dist/js/city-picker.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+    	$("#city-picker").cityPicker({
+		    title: "请选择收货地址"
+		});
+    </script>
+    <script>
+    	// 验证手机号码
+    	checkPhone();
+    	function checkPhone(){ 
+		    $('.phone').blur(function(){
+		    	var phone = $(this).value;
+			    if(!(/^1[34578]\d{9}$/.test(phone))){ 
+			        $(this).parent().siblings('.weui-cell__ft').find('.weui-icon-warn').show();
+			        return false; 
+			    }
+		    })
+		}
+    	// 错误信息清楚
+    	phoneFocus();
+    	function phoneFocus(){
+    		$('.phone').focus(function(){
+	 			$(this).parent().siblings('.weui-cell__ft').find('.weui-icon-warn').hide();
+	    	})
+    	}
+ 	
+ 		// 头部删除按钮弹框
+		$(document).on("click", ".show-confirm", function() {
+	        $.confirm("是否删除该收藏地址？", "确认", function() {
+	          $.toast("地址已删除!");
+	        }, function() {
+	          //取消操作
+	        });
+	    });
+
+    </script>
+</body>
+
+</html>

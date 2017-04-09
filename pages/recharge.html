@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body ontouchstart>
+    <div class="content">
+    	<div class="hd">
+    		<div class="hd-back"><a href="address_list.html"></a></div>
+    		<div class="hd-title">充值立马返现</div>
+    	</div>
+    	<div class="recharge">
+    		<div class="recharge-box">
+    			<div class="recharge-btn">
+    				<a href="javascript:;">请选择充值面额</a>
+    				<i class="down-icon"><img src="../font_icon/down_icon.svg" alt="" /></i>
+    			</div>
+    			<ul class="downtoggle">
+    				<li>10元</li>
+    				<li>30元</li>
+    				<li>50元</li>
+    				<li>100元</li>
+    			</ul>
+    		</div>
+    	</div>
+    	<div class="confirmButton">
+			<a id="show-loading" href="javascript:;" class="weui-btn weui-btn_primary">确 定</a>
+		</div>
+    </div>
+
+    <script src="../dist/lib/jquery-2.1.4.js"></script>
+    <script src="../dist/lib/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    </script>
+
+    <script src="../dist/js/jquery-weui.js"></script>
+    <script src="../dist/js/city-picker.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+    	$('.recharge').on('click','.recharge-btn',function(){
+    		$(this).siblings('.downtoggle').slideToggle();
+    	});
+    	
+    	$('.recharge').on('click','.downtoggle li',function(){
+    		var txt = $(this).text();
+    		$(this).parents('.recharge').find('.recharge-btn a').text(txt);
+    	});
+    	
+    	$('#show-loading').on('click',function(){
+    		$.showLoading("充值中");
+    		setTimeout(function(){
+    			$.hideLoading();
+    			$.toast("充值成功");
+    		},3000);
+    	})
+    </script>
+ 
+</body>
+
+</html>

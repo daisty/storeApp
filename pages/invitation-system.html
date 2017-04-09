@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body ontouchstart>
+    <div class="content">
+    	<div class="hd">
+    		<div class="hd-back"><a href="go.back(-1)"></a></div>
+    		<div class="hd-title">加入我们</div>
+    	</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+			    <div class="weui-cell__bd">
+			       <input class="weui-input" type="text" placeholder="请输入邀请码">
+			    </div>
+			    <div class="weui-cell__ft ml10"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" id="confirmBtn">确认</a></div>
+			</div>
+		</div>
+		<div class="invitation">
+			<p>相关事宜请联系客服 <a class="red" href="tel:10086">10086</a></p>
+			<img src="../font_icon/service.svg" alt="" />
+			<p class="red">恭喜你成为代理</p>
+		</div>
+    </div>
+
+    <script src="../dist/lib/jquery-2.1.4.js"></script>
+    <script src="../dist/lib/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    </script>
+
+    <script src="../dist/js/jquery-weui.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+    	succeed();
+    	function succeed(){
+    		$('#confirmBtn').on('click',function(){
+    			$.toast("恭喜你成为代理", "text");
+				$(this).parents('.weui-cells').hide(100,function(){
+					$('.invitation').show();
+				});
+    			
+    			
+    		})
+    	}
+    </script>
+</body>
+
+</html>

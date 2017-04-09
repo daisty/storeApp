@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body ontouchstart>
+    <div class="content">
+    	<div class="hd">
+    		<div class="hd-back"><a href="go.back(-1)"></a></div>
+    		<div class="hd-title">我的地址管理</div>
+    	</div>
+    	<div class="weui-cells weui-cells_form">
+    		<div class="address-list layout-pd">
+			   	<p class="address-msg">
+			   		<strong>周杰伦</strong>
+			   		<span>先生</span>
+			   		<span>136123456789</span>
+			   	</p> 
+			   	<div class="address-add">
+			   		<p class="weui-cell__bd gray">
+			   			广州天河区
+			   		</p>
+			   		<a class="edit-icon" href="edit_address.html"></a>
+			   	</div>
+			</div>
+			<div class="address-list layout-pd">
+			   	<p class="address-msg">
+			   		<strong>周杰伦</strong>
+			   		<span>先生</span>
+			   		<span>136123456789</span>
+			   	</p> 
+			   	<div class="address-add">
+			   		<p class="weui-cell__bd gray">
+			   			广州天河区
+			   		</p>
+			   		<a class="edit-icon" href="edit_address.html"></a>
+			   	</div>
+			</div>
+			<div class="address-list layout-pd">
+			   	<p class="address-msg">
+			   		<strong>周杰伦</strong>
+			   		<span>先生</span>
+			   		<span>136123456789</span>
+			   	</p> 
+			   	<div class="address-add">
+			   		<p class="weui-cell__bd gray">
+			   			广州天河区
+			   		</p>
+			   		<a class="edit-icon" href="edit_address.html"></a>
+			   	</div>
+			</div>
+    	</div>
+    </div>
+	<div class="weui-footer_fixed-bottom weui-tabbar  weui-footer ft-btn-con">
+    	<a class="confirm-withdraw" href="add_address.html"><b class="add"></b><span>新增地址</span></a>
+    </div>
+    <script src="../dist/lib/jquery-2.1.4.js"></script>
+    <script src="../dist/lib/fastclick.js"></script>
+    <script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    </script>
+
+    <script src="../dist/js/jquery-weui.js"></script>
+    <script src="../dist/js/city-picker.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+    	$("#city-picker").cityPicker({
+		    title: "请选择收货地址"
+		});
+    </script>
+
+</body>
+
+</html>
