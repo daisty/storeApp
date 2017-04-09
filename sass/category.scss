@@ -1,3 +1,4 @@
+@import 'caret';
 $color: #ff6c00;
 $borderColor: #efefef;
 // 头尾公共样式
@@ -28,6 +29,13 @@ $borderColor: #efefef;
         flex: 1;
         text-align: center;
     }
+    .store {
+        i {
+            margin-left: 15px;
+            top: 15px;
+            @include caret(absolute, 10px, 1px, right, #404040, #d5d5d5);
+        }
+    }
 }
 
 // 右边 固定(推荐/分类标签)
@@ -45,16 +53,19 @@ $borderColor: #efefef;
     top: 50px;
     height: 50px;
     line-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & > li {
-        width: 50%;
-        text-align: center;
-        height: 100%;
-        flex: 1;
-        &.on {
-            color: $color;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            font-size: 14px;
+            width: 50%;
+            text-align: center;
+            height: 100%;
+            flex: 1;
+            &.on {
+                color: $color;
+            }
         }
     }
     .filter-price {
@@ -189,28 +200,24 @@ $borderColor: #efefef;
             flex: 1;
         }
     }
-    .panel-media-tit {
-        color: #404040;
-    }
-    .panel-media-subtit {
-        font-size: 10px;
-        color: #ccc;
-    }
-    .panel-tip {
-        display: table;
-        font-size: 10px;
-        border-radius: 2px;
-        border: 1px solid $color;
-        color: $color;
-        text-align: center;
-        padding: 0 5px;
-    }
-    .panel-media-price {
-        color: $color;
+}
+
+.cate-types {
+    .base-cart {
+        width: 28px;
+        height: 28px;
+        z-index: 10;
+        margin-right: -2px;
+        img {
+            width: 18px;
+            height: 18px;
+            margin: 5px;
+        }
     }
 }
 
 // 加减
+.base-cart,
 .number {
     display: flex;
     width: 22px;
@@ -288,25 +295,24 @@ $borderColor: #efefef;
 }
 
 // 抛出去的小球
-.ball-contain {
-    .ball {
-        position: fixed;
-        left: 32px;
-        bottom: 22px;
-        z-index: 10;
-        &.drop-transition {
-            transition: all .4s cubic-bezier(.49, -.29, .75, .41);
-            .inner {
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background-color: $color;
-                transition: all .4s linear;
-            }
-        }
-    }
-}
-
+// .ball-contain {
+//     .ball {
+//         position: fixed;
+//         left: 32px;
+//         bottom: 22px;
+//         z-index: 10;
+//         &.drop-transition {
+//             transition: all .4s cubic-bezier(.49, -.29, .75, .41);
+//             .inner {
+//                 width: 16px;
+//                 height: 16px;
+//                 border-radius: 50%;
+//                 background-color: $color;
+//                 transition: all .4s linear;
+//             }
+//         }
+//     }
+// }
 .select {
     color: #fff;
     background-color: #0063d8;
@@ -319,48 +325,6 @@ $borderColor: #efefef;
     margin-right: 5px;
 }
 
-.ffoot-hd {
-    width: 18%;
-    height: 100%;
-    position: relative;
-    .cart-img {
-        position: absolute;
-        left: 16%;
-        top: -30px;
-        img {
-            width: 50px;
-            height: 50px;
-        }
-    }
-    .weui-badge {
-        border-radius: 50%;
-        position: absolute;
-        top: -2px;
-        right: -2px;
-    }
-}
-
-.ffoot-bd {
-    flex: 2;
-    box-flex: 2;
-    .weui-tabbar__label {
-        text-align: left;
-    }
-}
-
-.filter-footer {
-    // background-color: $borderColor;
-    // bottom: 0;
-    .weui-tabbar {
-        align-items: center;
-    }
-    .weui-tabbar__item {
-        padding: 0;
-    }
-    .weui-tabbar__label {
-        line-height: 1;
-    }
-}
 .hide {
     display: none;
 }
