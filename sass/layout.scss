@@ -1,0 +1,284 @@
+
+$hd:#ff6c00;
+$line-color:#ececec;
+$color:#ff6c00;
+
+//单行文字省略
+@mixin txt() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin txtmore($number){
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp:$number;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+
+
+
+body{
+    color: #666;
+}
+em{
+    font-style: normal;
+}
+.red{
+    color:$color;
+}
+.gray{
+    color:#999;
+}
+.bd{
+    border: 1px solid $line-color;
+}
+.layout-pd{
+    padding: 10px 15px;
+}
+.close-icon{
+    background: url(../font_icon/close.svg) no-repeat center center;
+}  
+/* weui初始化 */
+.weui-cell:before{
+    left:0;
+}
+.weui-btn{
+    line-height: 2;
+}
+.weui-footer_fixed-bottom{
+    bottom: 0;
+}
+.weui-cells{
+    margin-top: 0;
+}
+.weui-cells{
+    color:#666;
+}
+.weui-cells_checkbox .weui-cell__hd {
+    padding-right: 0;
+}
+[class*=" weui-icon-"]:before, [class^=weui-icon-]:before{
+    margin-left: 0;
+}
+
+/* weui初始化  end */
+.hd{
+    position: relative;
+   width: 100%;
+   height: 40px;
+   line-height: 40px;
+   background:$hd ; 
+}
+
+.hd-right,.hd-back{
+    z-index: 9;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 40px;
+    height: 40px;
+    a{
+        color:#fff;
+        width: 100%;
+        height: 100%;
+        line-height: 40px;
+        font-size: 24px;
+        text-align: center;
+        display: block;
+    }
+}
+.hd-back{
+    a{
+       background: url(../font_icon/back.svg) no-repeat center center; 
+    }
+}
+.hd-right{
+    left:auto;
+    right:0;
+}
+.hd-title{
+    margin: 0 50px;
+    text-align: center;
+    font-size: 16px;
+    color:#fff;
+}
+
+
+.app-list{
+
+}
+.list-top{
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    color:#333;
+    padding: 0 15px;
+    background: #fff;
+}
+.app-list-con{
+    background: #fff;
+    margin-bottom: 5px;
+    
+    .can{
+        margin-top: 30px;
+        padding: 0 15px;
+        line-height: 40px;
+        border-bottom: 1px solid $line-color;
+    }
+}
+.confirmButton{
+    padding: 15px 15px;
+}
+
+.weui-cell__bd{
+    .bd{
+        border: 1px solid $line-color;
+        padding:5px 10px;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+}
+.err{
+    width: 40px;
+    height: 100%;
+    display: block;
+}
+
+.add {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    &:before {
+        content: '';
+        border-top: 2px solid #fff;
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -1px;
+    }
+}
+.add {
+    background-color: $color;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    &:after {
+        content: '';
+        border-top: 2px solid #fff;
+        width: 11px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -6px;
+        margin-top: -1px;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+.ft-btn-con{
+    height: 45px;
+    a{
+        width: 100%;
+        height: 100%;
+        display: block;
+        font-size: 16px;
+        line-height: 42px;
+        background: #fff;
+        color:$color;
+        span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    
+}
+
+
+/* 地址管理列表 start */
+.address-list{
+    position: relative;
+    &:after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 1px;
+        border-top: 1px solid #d9d9d9;
+        color: #d9d9d9;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+    }
+}
+.address-msg{
+    margin-bottom: 8px;
+    strong,span{
+        margin-right: 8px;
+    }
+}
+.address-add{
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.edit-icon{
+    width: 20px;
+    height: 24px;
+    background: url(../font_icon/edit.svg) no-repeat center center;
+    display: block;
+}
+/* 地址管理列表 end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
