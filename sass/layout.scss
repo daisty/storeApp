@@ -109,45 +109,45 @@ em{
 
 /* weui初始化  end */
 .hd{
-    position: relative;
-   width: 100%;
-   height: 40px;
-   line-height: 40px;
-   background:$hd ; 
+   position: relative;
+// width: 100%;
+// height: 40px;
+// line-height: 40px;
+// background:$hd ; 
 }
 
-.hd-right,.hd-back{
-    z-index: 9;
-    position: absolute;
-    left:0;
-    top:0;
-    width: 40px;
-    height: 40px;
-    a{
-        color:#fff;
-        width: 100%;
-        height: 100%;
-        line-height: 40px;
-        font-size: 24px;
-        text-align: center;
-        display: block;
-    }
-}
-.hd-back{
-    a{
-       background: url(../font_icon/back.svg) no-repeat center center; 
-    }
-}
-.hd-right{
-    left:auto;
-    right:0;
-}
-.hd-title{
-    margin: 0 50px;
-    text-align: center;
-    font-size: 16px;
-    color:#fff;
-}
+//.hd-right,.hd-back{
+//  z-index: 9;
+//  position: absolute;
+//  left:0;
+//  top:0;
+//  width: 40px;
+//  height: 40px;
+//  a{
+//      color:#fff;
+//      width: 100%;
+//      height: 100%;
+//      line-height: 40px;
+//      font-size: 24px;
+//      text-align: center;
+//      display: block;
+//  }
+//}
+//.hd-back{
+//  a{
+//     background: url(../font_icon/back.svg) no-repeat center center; 
+//  }
+//}
+//.hd-right{
+//  left:auto;
+//  right:0;
+//}
+//.hd-title{
+//  margin: 0 50px;
+//  text-align: center;
+//  font-size: 16px;
+//  color:#fff;
+//}
 
 
 .app-list{

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单结算</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="email=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="keywords" content="订单结算" />
+    <meta name="description" content="订单结算" />
+    <link rel="stylesheet" href="../dist/lib/weui.min.css">
+    <link rel="stylesheet" href="../dist/css/jquery-weui.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/order.css" />
+</head>
+
+<body ontouchstart="">
+	
+	<div class="content">   		
+		<!-- 头部 -->
+		<div class="hd">
+    		<div class="hd-back"><a href="my_order.html"></a></div>
+    		<div class="hd-title">订单结算</div>
+    	</div>
+
+	    <!-- 内容区 -->
+	    <div class="order-detail">
+        <!-- 订单编号 -->
+	        <div class="panel-list">
+	            <table class="panel-hd">
+	                <tr>
+	                    <th>订单编号:</th>
+	                    <th>123456</th>
+	                </tr>
+	                <tr>
+	                    <th>下单时间:</th>
+	                    <th>2017-02-24 10:20</th>
+	                </tr>
+	            </table>
+	            <div class="panel-bd fcolor">待收货</div>
+	        </div>
+	        <!-- 收货地址 -->
+	        <section>
+	            <div class="weui-cell weui-panel">
+	                <div class="weui-cell__bd">
+	                    <strong>收货地址</strong>
+	                </div>
+	                <div class="weui-cell__bd rtxt">
+	                    <strong>海淀区</strong>
+	                </div>
+	            </div>
+	            <a href="address_list.html" class="panel-list">
+	                <div class="panel-bd">
+	                    <p>李先生 13800138000</p>
+	                    <p>万泉河路68号紫金大厦</p>
+	                </div>
+	                <div class="panel-ft">
+	                    <span class="panel-caret"></span>
+	                </div>
+	            </a>
+	        </section>
+	        <!-- 商品明细 -->
+	        <section>
+	            <div class="weui-cell weui-panel">
+	                <div class="weui-cell__bd">
+	                    <strong>商品明细</strong>
+	                </div>
+	            </div>
+	            <div class="panel-list">
+	                <div class="panel-hd">
+	                    <p>蒙牛酸奶</p>
+	                </div>
+	                <div class="panel-bd">
+	                    <p>x 5</p>
+	                </div>
+	                <div class="panel-bd">
+	                    <s>&yen; 5.00</s>
+	                </div>
+	                <div class="panel-bd">
+	                    <p>&yen; 4.00</p>
+	                </div>
+	            </div>
+	            <div class="panel-list">
+	                <div class="panel-hd">
+	                    <p>面包</p>
+	                </div>
+	                <div class="panel-bd">
+	                    <p>x 5</p>
+	                </div>
+	                <div class="panel-bd">
+	                </div>
+	                <div class="panel-bd">
+	                    <p>&yen; 7.00</p>
+	                </div>
+	            </div>
+	        </section>
+	        <!-- 取衣时间 -->
+	        <section>
+	            <div class="weui-cell weui-panel">
+	                <div class="weui-cell__bd">
+	                    <strong>取衣时间</strong>
+	                </div>
+	                <div class="weui-cell__bd rtxt">
+	                    <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_blue">今天</a>
+	                    <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">明天</a>
+	                </div>
+	            </div>
+	            <div class="weui-cell panel-input panel-list">
+	                <div class="panel-bd">
+	                    <input class="weui-input" id="time" type="text" value="" readonly="" placeholder="选择取衣时间">
+	                </div>
+	                <span class="panel-caret"></span>
+	            </div>
+	        </section>
+	        <!-- 代金券 -->
+	        <section>
+	            <a href="#" class="panel-list">
+	                <div class="panel-bd">
+	                    <p>5元代金券</p>
+	                </div>
+	                <div class="panel-ft">
+	                    <span class="panel-caret"></span>
+	                </div>
+	            </a>
+	        </section>
+	        <!-- 邮费 -->
+	        <section>
+	            <div class="weui-panel">
+	                <div class="panel-list">
+	                    <div class="panel-bd">
+	                        邮费:
+	                        <span>&yen; 5.00</span>
+	                    </div>
+	                    <div class="panel-bd">
+	                        共优惠:
+	                        <span>&yen; 10.00</span>
+	                    </div>
+	                    <div class="fcolor">
+	                        <span>&yen; 10.00</span>
+	                    </div>
+	                </div>
+	            </div>
+	        </section>
+	
+	        <!-- 底部按钮区 -->
+	        <div class="base-footer ">
+	            <div class="weui-panel">
+	                <a href="order-detail.html" class="weui-btn weui-btn_mini weui-btn_cancel">取消订单</a>
+	                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_now">立即付款</a>
+	            </div>
+	        </div>
+    	</div>
+		
+	</div>
+
+</body>
+
+</html>
+
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../dist/js/jquery-weui.min.js"></script>
+<script src="../js/order.js"></script>

@@ -17,6 +17,7 @@ var dataliHtml = '<a href="#" class="panel-media">\
                         <div class="panel-media-price">\
                         &yen <i>1.4</i>\
                         </div>\
+                        <div class="base-cart"><img src="../images/cart.svg" alt="" /></div>\
                         <div class="number">\
                             <b class="reduce"></b>\
                             <input class="input-num" type="number" value="0" readonly="">\
@@ -39,6 +40,7 @@ var dataliHtml = '<a href="#" class="panel-media">\
                         <div class="panel-media-price">\
                                &yen <i>1.4</i>\
                         </div>\
+                        <div class="base-cart"><img src="../images/cart.svg" alt="" /></div>\
                         <div class="number">\
                             <b class="reduce"></b>\
                             <input class="input-num" type="number" value="0" readonly="">\
@@ -151,10 +153,11 @@ myScrollri.on('scroll', updatePosition);
 function addnum() {
     // var limitBuy = $('.limit-buy').html();
     var limitBuy = 5; //限购
-    $(".add").on("click", function() {
-        $(this).parent('.number').addClass('enter')
-        var number = parseInt($(this).prev().val());
-        var num = $(this).parent('.number').find('.input-num');
+    $(".add, .base-cart").on("click", function() {
+        $(this).parents('.panel-media').find('.number').addClass('enter');
+        $(this).parents('.panel-media').find('.base-cart').addClass('hide');
+        var number = parseInt($(this).parents('.panel-media').find('.input-num').val());
+        var num = $(this).parents('.panel-media').find('.number').find('.input-num');
         if (!isNaN(number)) {
             if (number < 1) {
                 number = 1;
@@ -171,8 +174,7 @@ function addnum() {
         } else {
             number = 1
         }
-        $(this).prev().val(number);
-        $(num).html(number);
+        num.val(number);
         tot();
     });
 };
@@ -184,7 +186,8 @@ function reducenum() {
         if (!isNaN(number)) {
             if (number <= 1) {
                 number = 0;
-                $(this).parent('.number').removeClass('enter')
+                $(this).parent('.number').removeClass('enter');
+                $(this).parents('.panel-media').find('.base-cart').removeClass('hide');
             } else {
                 number -= 1;
                 $(this).siblings('.add').css({ backgroundColor: '#ff6c00' })
@@ -214,6 +217,7 @@ function tot() {
         sumA += parseInt(val);
         if (sumA <= 0) {
             $('.weui-badge').addClass('hide');
+            $('.tol-price').html('0');
         } else {
             $('.weui-badge').html(sumA);
             $('.weui-badge').removeClass('hide');

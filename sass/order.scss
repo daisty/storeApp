@@ -3,7 +3,7 @@ $color: #ff6c00;
 $borderColor: #efefef;
 // 头尾公共样式
 .order-detail {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 50px;
     section {
         background-color: #FFF;
@@ -33,11 +33,14 @@ $borderColor: #efefef;
     .weui-btn {
         margin-left: 5px;
         margin-right: 0;
-        line-height: 1.8;
+        line-height: 2;
         margin-top: 0;
         vertical-align: middle;
         &:last-child {
             margin-right: 0;
+        }
+        &:hover{
+            color: #fff;
         }
     }
 }
@@ -47,7 +50,7 @@ $borderColor: #efefef;
 }
 
 .pane-form {
-    background-color: #e5e5e5;
+    background-color: #f1f4f9;
     text-align: center;
 }
 
@@ -61,7 +64,7 @@ $borderColor: #efefef;
     .panel-hd {
         flex: 1;
         max-width: 30%;
-        line-height: 1.8;
+        line-height: 2;
         th {
             &:first-child {
                 min-width: 60px;
@@ -109,10 +112,13 @@ $borderColor: #efefef;
     &:after {
         border-color: #fa181a;
     }
+    &:hover{
+        color: #fff;
+    }
 }
 
 .mtop-5 {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .fcolor {

@@ -160,7 +160,6 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: $color;
 }
 
 svg {
@@ -287,26 +286,44 @@ footer a {
 }
 @import 'caret';
 // 其他页面有返回的公共头部
-.base-header {
-    background-color: #FFF;
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    display: flex;
+
+.hd{
     position: fixed;
-    left: 0;
-    z-index: 999;
-    top: 0;
-    background-color: #f5d6b7;
-    span {
-        flex: 1;
-        text-align: center;
-    }
+   width: 100%;
+   height: 40px;
+   line-height: 40px;
+   background:$color; 
 }
 
-.go-back {
-    margin-left: 15px;
-    top: 15px;
-    @include caret(absolute, 10px, 1px, left, #157efe, #f5d6b7);
+.hd-right,.hd-back{
+    z-index: 9;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 40px;
+    height: 40px;
+    a{
+        color:#fff;
+        width: 100%;
+        height: 100%;
+        line-height: 40px;
+        font-size: 24px;
+        text-align: center;
+        display: block;
+    }
+}
+.hd-back{
+    a{
+       background: url(../font_icon/back.svg) no-repeat center center; 
+    }
+}
+.hd-right{
+    left:auto;
+    right:0;
+}
+.hd-title{
+    margin: 0 50px;
+    text-align: center;
+    font-size: 16px;
+    color:#fff;
 }

@@ -2,7 +2,6 @@
 $color: #ff6c00;
 $borderColor: #efefef;
 .goods-detail {
-    padding-top: 50px;
     padding-bottom: 50px;
 }
 .goods-content {
@@ -20,17 +19,17 @@ $borderColor: #efefef;
 .add-cart {
     background-color: $color;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     min-width: 40%;
 }
 
 .goods-banner {
     width: 100%;
     overflow: hidden;
-    height: 320px;
+//  height: 320px;
     img {
         width: 100%;
-        height: 320px;
+       
     }
 }
 
