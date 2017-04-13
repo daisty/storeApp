@@ -88,7 +88,7 @@ $borderColor: #efefef;
 .panel-input {
     .panel-caret {
         right: 30px;
-        margin-top: 10px;
+        margin-top: 2px;
         @include caret(absolute, 10px, 2px, bottom, #157efe, #fff);
     }
 }
